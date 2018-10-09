@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Category: Zookeeper | wr4javaee</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="wr4javaee">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="shortcut icon" href="" />
+  <link rel="icon" href="" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				<!-- <i class="fa fa-home"></i> -->
+				wr4javaee
+			</a>
+
+				<div class='menu'>
+					<ul class='h-list'>
+                        
+    						
+    							<li>
+    								<a class='nav-about flat-box' href='/'>
+    									<i class='fa fa-home fa-'></i>&nbsp;主页
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-projects flat-box' href='https://wangran.me'>
+    									<i class='fa fa-cube fa-'></i>&nbsp;项目
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-home flat-box' href='/'>
+    									<i class='fa fa-rss fa-'></i>&nbsp;博客
+    								</a>
+    							</li>
+    						
+    							<li>
+    								<a class='nav-archives flat-box' href='/archives'>
+    									<i class='fa fa-archive fa-'></i>&nbsp;归档
+    								</a>
+    							</li>
+    						
+        			 
+					</ul>
+					<div class='underline'></div>
+				</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fa fa-search fa-fw" href='javascript:void(0)'></span></a></li>
+				
+				<li class='s-menu'><a class="fa fa-navicon fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				xaoxuu
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="fa fa-comments fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-top'><a class="fa fa-arrow-up fa-fw flat-box" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="fa fa-list-ul fa-fw flat-box" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+        <div class="header">wr4javaee</div>
+		<nav>
+            <ul>
+                
+                    
+                        <li>
+                            <a class='nav-about flat-box nav flat-box' href='/'><i class='fa fa-home fa-fw'></i>&nbsp;主页</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-projects flat-box nav flat-box' href='https://wangran.me'><i class='fa fa-cube fa-fw'></i>&nbsp;项目</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-home flat-box nav flat-box' href='/'><i class='fa fa-rss fa-fw'></i>&nbsp;博客</a>
+                        </li>
+                    
+                        <li>
+                            <a class='nav-archives flat-box nav flat-box' href='/archives'><i class='fa fa-archive fa-fw'></i>&nbsp;归档</a>
+                        </li>
+                    
+             
+            </ul>
+		</nav>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            
+    <script>
+        window.subData= { title:'category : Zookeeper'}
+    </script>
+
+
+<section class="post-list">
+    
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/07/27/zookeeper_curator/">
+                
+                    Zookeeper Curator的使用
+                
+            </a>
+        </h2>
+        <time>
+            2016-07-27
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Zookeeper/">Zookeeper</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Curator是ZooKeeper的开源客户端。<br>官网：<a href="http://curator.apache.org/" target="_blank" rel="noopener">http://curator.apache.org/</a><br>API文档：<a href="http://curator.apache.org/apidocs/index.html" target="_blank" rel="noopener">http://curator.apache.org/apidocs/index.html</a><br>
+        
+            <div class="readmore">
+                <a href="/2016/07/27/zookeeper_curator/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/07/26/zookeeper_java_api/">
+                
+                    Zookeeper Java API的使用
+                
+            </a>
+        </h2>
+        <time>
+            2016-07-26
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Zookeeper/">Zookeeper</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Zookeeper官方API文档 <a href="http://zookeeper.apache.org/doc/r3.4.6/api/index.html" target="_blank" rel="noopener">http://zookeeper.apache.org/doc/r3.4.6/api/index.html</a></p>
+        
+            <div class="readmore">
+                <a href="/2016/07/26/zookeeper_java_api/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/07/23/zookeeper_deploy_and_client_using/">
+                
+                    Zookeeper的安装部署与客户端使用
+                
+            </a>
+        </h2>
+        <time>
+            2016-07-23
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Zookeeper/">Zookeeper</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <p>zookeeper官方网站: <a href="http://zookeeper.apache.org/" target="_blank" rel="noopener">http://zookeeper.apache.org/</a></p>
+<h2 id="Zookeeper的安装与部署"><a href="#Zookeeper的安装与部署" class="headerlink" title="Zookeeper的安装与部署"></a>Zookeeper的安装与部署</h2><p>Zookeeper通过Java编写，因此运行前需要配置好JRE</p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>zookeeper下载地址为<a href="http://mirrors.cnnic.cn/apache/zookeeper/" target="_blank" rel="noopener">http://mirrors.cnnic.cn/apache/zookeeper/</a><br>
+        
+            <div class="readmore">
+                <a href="/2016/07/23/zookeeper_deploy_and_client_using/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/07/18/zookeeper-02/">
+                
+                    Zookeeper学习笔记二
+                
+            </a>
+        </h2>
+        <time>
+            2016-07-18
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Zookeeper/">Zookeeper</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p>
+<ul>
+<li>Leader 选举而来，为client提供读/写服务。</li>
+<li>Follower 为client提供读服务，可参与选举。</li>
+<li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
+        
+            <div class="readmore">
+                <a href="/2016/07/18/zookeeper-02/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Zookeeper-ZAB/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper ZAB</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/07/18/zookeeper_summary/">
+                
+                    Zookeeper学习笔记二
+                
+            </a>
+        </h2>
+        <time>
+            2016-07-18
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Zookeeper/">Zookeeper</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p>
+<ul>
+<li>Leader 选举而来，为client提供读/写服务。</li>
+<li>Follower 为client提供读服务，可参与选举。</li>
+<li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
+        
+            <div class="readmore">
+                <a href="/2016/07/18/zookeeper_summary/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/07/10/zookeeper-01/">
+                
+                    Zookeeper学习笔记一之Paxos算法
+                
+            </a>
+        </h2>
+        <time>
+            2016-07-10
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Zookeeper/">Zookeeper</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>1990年提出的一种基于消息传递且具有高度容错性的一致性算法。<br>
+        
+            <div class="readmore">
+                <a href="/2016/07/10/zookeeper-01/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Zookeeper-Paxos/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper Paxos</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/07/10/zookeeper_paxos/">
+                
+                    Zookeeper学习笔记一之Paxos算法
+                
+            </a>
+        </h2>
+        <time>
+            2016-07-10
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Zookeeper/">Zookeeper</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>1990年提出的一种基于消息传递且具有高度容错性的一致性算法。<br>
+        
+            <div class="readmore">
+                <a href="/2016/07/10/zookeeper_paxos/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+</section>
+
+
+
+        </div>
+        <aside class='l_side'>
+            
+    
+        
+    <section class='m_widget author'>
+        
+            <div class='header'>
+                <img class='avatar' src='http://localhost:4000/images/yumao.jpg' />
+            </div>
+        
+        <div class='content'>
+            
+                <h2>STAY REAL!</h2>
+            
+            
+                <div>
+                    <i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>
+                    人生无限公司员工
+                </div>
+            
+        </div>
+        
+            <div class="social-wrapper">
+              
+                
+                    <a href="mailto:wr4javaee@126.com" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-envelope" aria-hidden="true"></i></a>
+                
+              
+                
+                    <a href="https://github.com/wr4javaee" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-github" aria-hidden="true"></i></a>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                    <a href="https://music.163.com/#/user/home?id=102135502" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-music" aria-hidden="true"></i></a>
+                
+              
+                
+                    <a href="atom" class="social flat-box" target="_blank" rel="external"><i class="social fa fa-rss" aria-hidden="true"></i></a>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </div>
+        
+    </section>
+
+
+    
+    
+        <section class='m_widget categories'>
+    <div class='header'><i class="fa fa-sitemap fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;分类</div>
+    <div class='content'>
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/Database/"><div class='name'>Database</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Github/"><div class='name'>Github</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Jekyll/"><div class='name'>Jekyll</div><div class='badge'>1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/TCP/"><div class='name'>TCP</div><div class='badge'>2</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Zookeeper/"><div class='name'>Zookeeper</div><div class='badge'>7</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+
+    
+    
+        
+    <section class='m_widget tagcloud'>
+        <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
+        <div class='content'>
+            <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Jekyll-Github-搭建静态博客-blog/" style="font-size: 14px; color: #999">Jekyll Github 搭建静态博客 blog</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TCP-Connection-TCP连接/" style="font-size: 14px; color: #999">TCP Connection TCP连接</a> <a href="/tags/Zookeeper/" style="font-size: 24px; color: #555">Zookeeper</a> <a href="/tags/Zookeeper-Paxos/" style="font-size: 14px; color: #999">Zookeeper Paxos</a> <a href="/tags/Zookeeper-ZAB/" style="font-size: 14px; color: #999">Zookeeper ZAB</a> <a href="/tags/数据库/" style="font-size: 14px; color: #999">数据库</a>
+        </div>
+    </section>
+
+
+    
+    
+        <section class='m_widget music'>
+    <div class='header'><i class="fa fa-headphones fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;音乐</div>
+    <div class='content'>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=450 src="//music.163.com/outchain/player?type=0&id=2404670714&auto=0&height=450"></iframe>
+    </div>
+</section>
+
+    
+    
+        <section class='m_widget links'>
+    <div class='header'><i class="fa fa-thumbs-up fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;友链</div>
+    <div class='content'>
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://wangran.me">
+                    <div class='name'>
+                        <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
+                        &nbsp;&nbsp;wr4javaee
+                    </div>
+                </a></li>
+            
+            <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="mailto:?subject=交换友链">
+                <div class='name'>
+                    <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+                    &nbsp;&nbsp;联系博主交换友链
+                </div>
+            </a></li>
+        </ul>
+
+    </div>
+</section>
+
+    
+    
+        
+
+    
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    
+        <div class="social-wrapper">
+          
+              
+                  <a href="mailto:wr4javaee@126.com" class="social fa fa-envelope flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="https://github.com/wr4javaee" class="social fa fa-github flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  <a href="https://music.163.com/#/user/home?id=102135502" class="social fa fa-music flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+                  <a href="atom" class="social fa fa-rss flat-box" target="_blank" rel="external"></a>
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+        </div>
+    
+    <br>
+    <div>博客内容遵循 <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="licenses">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></div>
+    <div>本站使用 <a href="https://github.com/xaoxuu/hexo-theme-material-x" target="_blank" class="codename">Material X</a> 作为主题，
+		总访问量为 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+    </div>
+</footer>
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<!-- 访问统计 -->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/jquery.fitvids.js"></script>
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
