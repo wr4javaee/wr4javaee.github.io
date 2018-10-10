@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangran.me/"/>
-  <updated>2018-10-09T11:25:29.577Z</updated>
+  <updated>2018-10-10T09:33:00.000Z</updated>
   <id>http://wangran.me/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spring Cloud Finchley 在业务系统中的实践总结</title>
+    <link href="http://wangran.me/2018/10/01/spring-cloud-notes-01/"/>
+    <id>http://wangran.me/2018/10/01/spring-cloud-notes-01/</id>
+    <published>2018-09-30T16:00:00.000Z</published>
+    <updated>2018-10-10T09:33:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Spring-Cloud-Finchley-在业务系统中的实践总结"><a href="#Spring-Cloud-Finchley-在业务系统中的实践总结" class="headerlink" title="Spring Cloud Finchley 在业务系统中的实践总结"></a>Spring Cloud Finchley 在业务系统中的实践总结</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　谈及Spring Cloud，就不可避免的要先讲讲近几年一直很火热的微服务概念。随着公司业务的发展，每一个技术项目都会经历从小到大、从简至繁，再到化繁为简的过程，那么如何合理的化繁为简，是一个亘古不变的值得持续讨论的话题。<br>　　如果将微服务理解为是可以独立部署、水平扩展、独立访问的服务单元，Spring Cloud就是这些微服务的大管家。微服务为什么需要大管家？<br>　　<br>　　<br>    <img src="media/15390670232567/15390761106099.jpg" alt=""></p><p>　　<br>　　上图虽然夸张，但确是我司业务在微服务进程中所遇到的其中一个问题。宜人贷的业务系统从2012年上线以来，历经无数次的迭代与服务拆分以后，现如今已裂变成了数百个子项目。虽然对于某一个微服务来说，维护成本大大降低，但业务是整体的，如果没有所谓的大管家，那么维护微服务集群一定是一个灾难。</p><hr><h2 id="简谈我们微服务化的历史进程"><a href="#简谈我们微服务化的历史进程" class="headerlink" title="简谈我们微服务化的历史进程"></a>简谈我们微服务化的历史进程</h2><p>　　在最初的微服务化进程中，也就是从2013年开始，我们引入了当时理念较为先进的Dubbo作为服务化治理的核心框架一直沿用至今。那么，为什么我们还要使用Spring Cloud？<br>　　首先，Dubbo自阿里巴巴开源后的很长一段时间长期停止了维护（2017年7月31日阿里团队又宣布重点维护），而Spring Cloud确是一直迭代至今，在很多技术理念上Dubbo相比Spring Cloud而言已不具优势，Dubbo所具备的功能也依然成为Spring Cloud的一个子集。<br>　　其次，Spring Cloud基于Spring Boot发展而来，其提供了一整套满足微服务的、可插拔式的一站式解决方案，简单易用。<br>　　最后，在我司业务中的App与App Server端，一直是Dubbo大管家所失控的法外之地，仅几个业务线，所部署的公网域名就多达几十个，可见这里服务之间繁杂的关系的维护成本，这部分项目已然是上图中的一个缩影。目前Spring Cloud在整个社区有着非常高的活跃度，那么选择Spring Cloud来治理当然是不二之选。</p><h3 id="基于Spring-Cloud我们能做哪些事？"><a href="#基于Spring-Cloud我们能做哪些事？" class="headerlink" title="基于Spring Cloud我们能做哪些事？"></a>基于Spring Cloud我们能做哪些事？</h3><p>　　引用官方说明描述一下Spring Cloud的核心特性以及支持其特性的核心组件。</p><h4 id="Features"><a href="#Features" class="headerlink" title="Features　　"></a>Features　　</h4><p>　　Spring Cloud focuses on providing good out of box experience for typical use cases and extensibility mechanism to cover others.</p><ul><li>Distributed/versioned configuration</li><li>Service registration and discovery</li><li>Routing</li><li>Service-to-service calls</li><li>Load balancing</li><li>Circuit Breakers</li><li>Global locks</li><li>Leadership election and cluster state</li><li>Distributed messaging</li></ul><h4 id="Main-Projects"><a href="#Main-Projects" class="headerlink" title="Main Projects"></a>Main Projects</h4><ul><li>Spring Cloud Config</li><li>Spring Cloud Netflix(Eureka, Hystrix, Zuul, Archaius, etc.).</li><li>Spring Cloud Bus</li><li>Spring Cloud for Cloud Foundry</li><li>Spring Cloud Open Service Broker</li><li>Spring Cloud Cluster</li><li>Spring Cloud Consul</li><li>Spring Cloud Security</li><li>Spring Cloud Sleuth</li><li>Spring Cloud Data Flow</li><li>Spring Cloud Stream</li><li>Spring Cloud Task</li><li>Spring Cloud Zookeeper</li><li>Spring Cloud for Amazon Web Services</li><li>Spring Cloud Connectors</li><li>Spring Cloud Starters</li><li>Spring Cloud CLI</li><li>Spring Cloud Contract</li><li>Spring Cloud Gateway</li><li>Spring Cloud OpenFeign</li><li>Spring Cloud Pipelines</li><li>Spring Cloud Function</li></ul><p>　　可以看到，Spring Cloud提供了非常多的核心组件，这些组件已经将微服务的所有需求都涵盖了。<br>　　TODO</p><h3 id="接入Spring-Cloud面对的困难与挑战"><a href="#接入Spring-Cloud面对的困难与挑战" class="headerlink" title="接入Spring Cloud面对的困难与挑战"></a>接入Spring Cloud面对的困难与挑战</h3><ul><li>如何与非Spring Boot传统项目集成</li><li>Zuul的增强，如何动态修改路由配置信息</li><li>面对与生产有差异的测试环境以及无法验证的生产环境，如何平稳上线</li><li>TODO</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Spring-Cloud-Finchley-在业务系统中的实践总结&quot;&gt;&lt;a href=&quot;#Spring-Cloud-Finchley-在业务系统中的实践总结&quot; class=&quot;headerlink&quot; title=&quot;Spring Cloud Finchley 在业务系
+      
+    
+    </summary>
+    
+      <category term="Spring Cloud" scheme="http://wangran.me/categories/Spring-Cloud/"/>
+    
+    
+      <category term="Spring Cloud" scheme="http://wangran.me/tags/Spring-Cloud/"/>
+    
+  </entry>
   
   <entry>
     <title>基于Github搭建个人博客</title>
@@ -112,32 +137,6 @@
   
   <entry>
     <title>Zookeeper学习笔记二</title>
-    <link href="http://wangran.me/2016/07/18/zookeeper-02/"/>
-    <id>http://wangran.me/2016/07/18/zookeeper-02/</id>
-    <published>2016-07-17T16:00:00.000Z</published>
-    <updated>2018-10-09T11:21:35.629Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p><ul><li>Leader 选举而来，为client提供读/写服务。</li><li>Follower 为client提供读服务，可参与选举。</li><li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。<a id="more"></a></li></ul><hr><h3 id="会话（Session）"><a href="#会话（Session）" class="headerlink" title="会话（Session）"></a>会话（Session）</h3><hr><h3 id="数据节点（Znode）"><a href="#数据节点（Znode）" class="headerlink" title="数据节点（Znode）"></a>数据节点（Znode）</h3><p>指数据模型（Znode Tree）中的数据单元</p><hr><h3 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h3><hr><h3 id="事件监听器（Watcher）"><a href="#事件监听器（Watcher）" class="headerlink" title="事件监听器（Watcher）"></a>事件监听器（Watcher）</h3><hr><h3 id="ACL（Access-Control-Lists）"><a href="#ACL（Access-Control-Lists）" class="headerlink" title="ACL（Access Control Lists）"></a>ACL（Access Control Lists）</h3><p>ZooKeeper定义了5种权限：</p><ul><li>CREATE 创建子节点的权限</li><li>READ 获取节点数据和节点列表的权限</li><li>WRITE 更新节点数据的权限</li><li>DELETE 删除子节点的权限</li><li>ADMIN 设置节点ACL的权限</li></ul><hr><h2 id="ZAB协议"><a href="#ZAB协议" class="headerlink" title="ZAB协议"></a>ZAB协议</h2><p>ZooKeeper原子消息广播协议（Zookeeper Atomic Broadcast）。<br>ZooKeeper并未采用Paxos，而是采用ZAB作为数据一致性的核心算法。</p><h3 id="ZAB协议两种基本模式"><a href="#ZAB协议两种基本模式" class="headerlink" title="ZAB协议两种基本模式"></a>ZAB协议两种基本模式</h3><h4 id="崩溃恢复"><a href="#崩溃恢复" class="headerlink" title="崩溃恢复"></a>崩溃恢复</h4><p>  服务器启动、Leader服务器挂掉时进入该模式，选举产生新Leader服务器。<br>  当集群中有过半服务器（包含Leader）与Leader服务器完成状态同步（即数据同步）后，退出该模式。</p><h5 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h5><ul><li>ZAB协议需要确保已在Leader提交的事务最终被所有服务器提交。</li><li>ZAB协议需要确保丢弃那些只在Leader服务器上被提出的事务。</li></ul><h5 id="Leader选举"><a href="#Leader选举" class="headerlink" title="Leader选举"></a>Leader选举</h5><p>算法思路：确保已被Leader提交的事务Proposal，同时丢弃已被掉过的事务Proposal。<br>即保证选举出的Leader服务器拥有集群中ZXID最大的事务Proposal。</p><h5 id="数据同步"><a href="#数据同步" class="headerlink" title="数据同步"></a>数据同步</h5><p>Leader服务器通过确认事务日志中所有Proposal是否已被集群中过半的服务器提交，来判断是否完成数据同步。</p><h4 id="消息广播"><a href="#消息广播" class="headerlink" title="消息广播"></a>消息广播</h4><h5 id="ZAB协议核心"><a href="#ZAB协议核心" class="headerlink" title="ZAB协议核心"></a>ZAB协议核心</h5><p>定义了可能改变ZooKeeper服务器数据状态的数据请求处理方式：<br><img src="/images/zookeeper/zab/2016_07_18_zab_message_broadcast.png" alt="zab_message_broadcast"></p><ul><li>Leader服务器收到事务请求后，生成事务Proposal，并为其分配事务ID（全局单调递增的ID，ZXID），放入队列中。</li><li>Follower服务器接收到Proposal后，以事务日志形式写入到本地磁盘，写入成功后Respone Leader服务器“Ack”。</li><li>当Leader服务器接收超过半数Follower服务器Ack响应，广播Commit消息发送给所有Follower服务器，Leader自身与收到Commit消息的Follower服务器会完成事务提交。</li></ul><p>基于TCP协议（FIFO）保证消息接收与发送的顺序性。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;h3 id=&quot;集群角色&quot;&gt;&lt;a href=&quot;#集群角色&quot; class=&quot;headerlink&quot; title=&quot;集群角色&quot;&gt;&lt;/a&gt;集群角色&lt;/h3&gt;&lt;p&gt;ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Leader 选举而来，为client提供读/写服务。&lt;/li&gt;
-&lt;li&gt;Follower 为client提供读服务，可参与选举。&lt;/li&gt;
-&lt;li&gt;Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
-    
-    </summary>
-    
-      <category term="Zookeeper" scheme="http://wangran.me/categories/Zookeeper/"/>
-    
-    
-      <category term="Zookeeper ZAB" scheme="http://wangran.me/tags/Zookeeper-ZAB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Zookeeper学习笔记二</title>
     <link href="http://wangran.me/2016/07/18/zookeeper_summary/"/>
     <id>http://wangran.me/2016/07/18/zookeeper_summary/</id>
     <published>2016-07-17T16:00:00.000Z</published>
@@ -159,6 +158,32 @@
     
     
       <category term="Zookeeper" scheme="http://wangran.me/tags/Zookeeper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Zookeeper学习笔记二</title>
+    <link href="http://wangran.me/2016/07/18/zookeeper-02/"/>
+    <id>http://wangran.me/2016/07/18/zookeeper-02/</id>
+    <published>2016-07-17T16:00:00.000Z</published>
+    <updated>2018-10-09T11:21:35.629Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p><ul><li>Leader 选举而来，为client提供读/写服务。</li><li>Follower 为client提供读服务，可参与选举。</li><li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。<a id="more"></a></li></ul><hr><h3 id="会话（Session）"><a href="#会话（Session）" class="headerlink" title="会话（Session）"></a>会话（Session）</h3><hr><h3 id="数据节点（Znode）"><a href="#数据节点（Znode）" class="headerlink" title="数据节点（Znode）"></a>数据节点（Znode）</h3><p>指数据模型（Znode Tree）中的数据单元</p><hr><h3 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h3><hr><h3 id="事件监听器（Watcher）"><a href="#事件监听器（Watcher）" class="headerlink" title="事件监听器（Watcher）"></a>事件监听器（Watcher）</h3><hr><h3 id="ACL（Access-Control-Lists）"><a href="#ACL（Access-Control-Lists）" class="headerlink" title="ACL（Access Control Lists）"></a>ACL（Access Control Lists）</h3><p>ZooKeeper定义了5种权限：</p><ul><li>CREATE 创建子节点的权限</li><li>READ 获取节点数据和节点列表的权限</li><li>WRITE 更新节点数据的权限</li><li>DELETE 删除子节点的权限</li><li>ADMIN 设置节点ACL的权限</li></ul><hr><h2 id="ZAB协议"><a href="#ZAB协议" class="headerlink" title="ZAB协议"></a>ZAB协议</h2><p>ZooKeeper原子消息广播协议（Zookeeper Atomic Broadcast）。<br>ZooKeeper并未采用Paxos，而是采用ZAB作为数据一致性的核心算法。</p><h3 id="ZAB协议两种基本模式"><a href="#ZAB协议两种基本模式" class="headerlink" title="ZAB协议两种基本模式"></a>ZAB协议两种基本模式</h3><h4 id="崩溃恢复"><a href="#崩溃恢复" class="headerlink" title="崩溃恢复"></a>崩溃恢复</h4><p>  服务器启动、Leader服务器挂掉时进入该模式，选举产生新Leader服务器。<br>  当集群中有过半服务器（包含Leader）与Leader服务器完成状态同步（即数据同步）后，退出该模式。</p><h5 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h5><ul><li>ZAB协议需要确保已在Leader提交的事务最终被所有服务器提交。</li><li>ZAB协议需要确保丢弃那些只在Leader服务器上被提出的事务。</li></ul><h5 id="Leader选举"><a href="#Leader选举" class="headerlink" title="Leader选举"></a>Leader选举</h5><p>算法思路：确保已被Leader提交的事务Proposal，同时丢弃已被掉过的事务Proposal。<br>即保证选举出的Leader服务器拥有集群中ZXID最大的事务Proposal。</p><h5 id="数据同步"><a href="#数据同步" class="headerlink" title="数据同步"></a>数据同步</h5><p>Leader服务器通过确认事务日志中所有Proposal是否已被集群中过半的服务器提交，来判断是否完成数据同步。</p><h4 id="消息广播"><a href="#消息广播" class="headerlink" title="消息广播"></a>消息广播</h4><h5 id="ZAB协议核心"><a href="#ZAB协议核心" class="headerlink" title="ZAB协议核心"></a>ZAB协议核心</h5><p>定义了可能改变ZooKeeper服务器数据状态的数据请求处理方式：<br><img src="/images/zookeeper/zab/2016_07_18_zab_message_broadcast.png" alt="zab_message_broadcast"></p><ul><li>Leader服务器收到事务请求后，生成事务Proposal，并为其分配事务ID（全局单调递增的ID，ZXID），放入队列中。</li><li>Follower服务器接收到Proposal后，以事务日志形式写入到本地磁盘，写入成功后Respone Leader服务器“Ack”。</li><li>当Leader服务器接收超过半数Follower服务器Ack响应，广播Commit消息发送给所有Follower服务器，Leader自身与收到Commit消息的Follower服务器会完成事务提交。</li></ul><p>基于TCP协议（FIFO）保证消息接收与发送的顺序性。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;h3 id=&quot;集群角色&quot;&gt;&lt;a href=&quot;#集群角色&quot; class=&quot;headerlink&quot; title=&quot;集群角色&quot;&gt;&lt;/a&gt;集群角色&lt;/h3&gt;&lt;p&gt;ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leader 选举而来，为client提供读/写服务。&lt;/li&gt;
+&lt;li&gt;Follower 为client提供读服务，可参与选举。&lt;/li&gt;
+&lt;li&gt;Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
+    
+    </summary>
+    
+      <category term="Zookeeper" scheme="http://wangran.me/categories/Zookeeper/"/>
+    
+    
+      <category term="Zookeeper ZAB" scheme="http://wangran.me/tags/Zookeeper-ZAB/"/>
     
   </entry>
   
@@ -208,28 +233,6 @@
   
   <entry>
     <title>TCP长连接与短连接的区别</title>
-    <link href="http://wangran.me/2016/07/03/tcp-connection/"/>
-    <id>http://wangran.me/2016/07/03/tcp-connection/</id>
-    <published>2016-07-02T16:00:00.000Z</published>
-    <updated>2018-10-09T11:21:35.627Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h2><p>当网络通信时采用TCP协议时，在真正的读写操作之前，server与client之间必须建立一个连接，当读写操作完成后，双方不再需要这个连接时它们可以释放这个连接，连接的建立是需要三次握手的，而释放则需要4次握手，所以说每个连接的建立都是需要资源消耗和时间消耗的。</p><a id="more"></a><p>经典的三次握手示意图：</p><p><img src="/images/networking_protocol/tcp/2016_07_03_01.jpg" alt="tcp_connection"></p><p>经典的四次握手关闭图：<br><img src="/images/networking_protocol/tcp/2016_07_03_02.jpg" alt="tcp_connection"></p><hr><h2 id="TCP短连接"><a href="#TCP短连接" class="headerlink" title="TCP短连接"></a>TCP短连接</h2><p>我们模拟一下TCP短连接的情况，client向server发起连接请求，server接到请求，然后双方建立连接。client向server发送消息，server回应client，然后一次读写就完成了，这时候双方任何一个都可以发起close操作，不过一般都是client先发起close操作。为什么呢，一般的server不会回复完client后立即关闭连接的，当然不排除有特殊的情况。从上面的描述看，短连接一般只会在client/server间传递一次读写操作</p><p>短连接的优点是：管理起来比较简单，存在的连接都是有用的连接，不需要额外的控制手段</p><hr><h2 id="TCP长连接"><a href="#TCP长连接" class="headerlink" title="TCP长连接"></a>TCP长连接</h2><p>接下来我们再模拟一下长连接的情况，client向server发起连接，server接受client连接，双方建立连接。Client与server完成一次读写之后，它们之间的连接并不会主动关闭，后续的读写操作会继续使用这个连接。</p><p>首先说一下TCP/IP详解上讲到的TCP保活功能，保活功能主要为服务器应用提供，服务器应用希望知道客户主机是否崩溃，从而可以代表客户使用资源。如果客户已经消失，使得服务器上保留一个半开放的连接，而服务器又在等待来自客户端的数据，则服务器将应远等待客户端的数据，保活功能就是试图在服务器端检测到这种半开放的连接。</p><p>如果一个给定的连接在两小时内没有任何的动作，则服务器就向客户发一个探测报文段，客户主机必须处于以下4个状态之一：</p><ul><li>客户主机依然正常运行，并从服务器可达。客户的TCP响应正常，而服务器也知道对方是正常的，服务器在两小时后将保活定时器复位。</li><li>客户主机已经崩溃，并且关闭或者正在重新启动。在任何一种情况下，客户的TCP都没有响应。服务端将不能收到对探测的响应，并在75秒后超时。服务器总共发送10个这样的探测 ，每个间隔75秒。如果服务器没有收到一个响应，它就认为客户主机已经关闭并终止连接。</li><li>客户主机崩溃并已经重新启动。服务器将收到一个对其保活探测的响应，这个响应是一个复位，使得服务器终止这个连接。</li><li>客户机正常运行，但是服务器不可达，这种情况与2类似，TCP能发现的就是没有收到探查的响应。</li><li>从上面可以看出，TCP保活功能主要为探测长连接的存活状况，不过这里存在一个问题，存活功能的探测周期太长，还有就是它只是探测TCP连接的存活，属于比较斯文的做法，遇到恶意的连接时，保活功能就不够使了。</li></ul><p>在长连接的应用场景下，client端一般不会主动关闭它们之间的连接，Client与server之间的连接如果一直不关闭的话，会存在一个问题，随着客户端连接越来越多，server早晚有扛不住的时候，这时候server端需要采取一些策略，如关闭一些长时间没有读写事件发生的连接，这样可以避免一些恶意连接导致server端服务受损；如果条件再允许就可以以客户端机器为颗粒度，限制每个客户端的最大长连接数，这样可以完全避免某个蛋疼的客户端连累后端服务。</p><p>长连接和短连接的产生在于client和server采取的关闭策略，具体的应用场景采用具体的策略，没有十全十美的选择，只有合适的选择。</p><hr><p>本文转自<a href="http://www.cnblogs.com/beifei/archive/2011/06/26/2090611.html" target="_blank" rel="noopener">http://www.cnblogs.com/beifei/archive/2011/06/26/2090611.html</a></p><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;TCP连接&quot;&gt;&lt;a href=&quot;#TCP连接&quot; class=&quot;headerlink&quot; title=&quot;TCP连接&quot;&gt;&lt;/a&gt;TCP连接&lt;/h2&gt;&lt;p&gt;当网络通信时采用TCP协议时，在真正的读写操作之前，server与client之间必须建立一个连接，当读写操作完成后，双方不再需要这个连接时它们可以释放这个连接，连接的建立是需要三次握手的，而释放则需要4次握手，所以说每个连接的建立都是需要资源消耗和时间消耗的。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="TCP" scheme="http://wangran.me/categories/TCP/"/>
-    
-    
-      <category term="TCP Connection TCP连接" scheme="http://wangran.me/tags/TCP-Connection-TCP%E8%BF%9E%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TCP长连接与短连接的区别</title>
     <link href="http://wangran.me/2016/07/03/tcp_connection/"/>
     <id>http://wangran.me/2016/07/03/tcp_connection/</id>
     <published>2016-07-02T16:00:00.000Z</published>
@@ -247,6 +250,28 @@
     
     
       <category term="TCP" scheme="http://wangran.me/tags/TCP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TCP长连接与短连接的区别</title>
+    <link href="http://wangran.me/2016/07/03/tcp-connection/"/>
+    <id>http://wangran.me/2016/07/03/tcp-connection/</id>
+    <published>2016-07-02T16:00:00.000Z</published>
+    <updated>2018-10-09T11:21:35.627Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h2><p>当网络通信时采用TCP协议时，在真正的读写操作之前，server与client之间必须建立一个连接，当读写操作完成后，双方不再需要这个连接时它们可以释放这个连接，连接的建立是需要三次握手的，而释放则需要4次握手，所以说每个连接的建立都是需要资源消耗和时间消耗的。</p><a id="more"></a><p>经典的三次握手示意图：</p><p><img src="/images/networking_protocol/tcp/2016_07_03_01.jpg" alt="tcp_connection"></p><p>经典的四次握手关闭图：<br><img src="/images/networking_protocol/tcp/2016_07_03_02.jpg" alt="tcp_connection"></p><hr><h2 id="TCP短连接"><a href="#TCP短连接" class="headerlink" title="TCP短连接"></a>TCP短连接</h2><p>我们模拟一下TCP短连接的情况，client向server发起连接请求，server接到请求，然后双方建立连接。client向server发送消息，server回应client，然后一次读写就完成了，这时候双方任何一个都可以发起close操作，不过一般都是client先发起close操作。为什么呢，一般的server不会回复完client后立即关闭连接的，当然不排除有特殊的情况。从上面的描述看，短连接一般只会在client/server间传递一次读写操作</p><p>短连接的优点是：管理起来比较简单，存在的连接都是有用的连接，不需要额外的控制手段</p><hr><h2 id="TCP长连接"><a href="#TCP长连接" class="headerlink" title="TCP长连接"></a>TCP长连接</h2><p>接下来我们再模拟一下长连接的情况，client向server发起连接，server接受client连接，双方建立连接。Client与server完成一次读写之后，它们之间的连接并不会主动关闭，后续的读写操作会继续使用这个连接。</p><p>首先说一下TCP/IP详解上讲到的TCP保活功能，保活功能主要为服务器应用提供，服务器应用希望知道客户主机是否崩溃，从而可以代表客户使用资源。如果客户已经消失，使得服务器上保留一个半开放的连接，而服务器又在等待来自客户端的数据，则服务器将应远等待客户端的数据，保活功能就是试图在服务器端检测到这种半开放的连接。</p><p>如果一个给定的连接在两小时内没有任何的动作，则服务器就向客户发一个探测报文段，客户主机必须处于以下4个状态之一：</p><ul><li>客户主机依然正常运行，并从服务器可达。客户的TCP响应正常，而服务器也知道对方是正常的，服务器在两小时后将保活定时器复位。</li><li>客户主机已经崩溃，并且关闭或者正在重新启动。在任何一种情况下，客户的TCP都没有响应。服务端将不能收到对探测的响应，并在75秒后超时。服务器总共发送10个这样的探测 ，每个间隔75秒。如果服务器没有收到一个响应，它就认为客户主机已经关闭并终止连接。</li><li>客户主机崩溃并已经重新启动。服务器将收到一个对其保活探测的响应，这个响应是一个复位，使得服务器终止这个连接。</li><li>客户机正常运行，但是服务器不可达，这种情况与2类似，TCP能发现的就是没有收到探查的响应。</li><li>从上面可以看出，TCP保活功能主要为探测长连接的存活状况，不过这里存在一个问题，存活功能的探测周期太长，还有就是它只是探测TCP连接的存活，属于比较斯文的做法，遇到恶意的连接时，保活功能就不够使了。</li></ul><p>在长连接的应用场景下，client端一般不会主动关闭它们之间的连接，Client与server之间的连接如果一直不关闭的话，会存在一个问题，随着客户端连接越来越多，server早晚有扛不住的时候，这时候server端需要采取一些策略，如关闭一些长时间没有读写事件发生的连接，这样可以避免一些恶意连接导致server端服务受损；如果条件再允许就可以以客户端机器为颗粒度，限制每个客户端的最大长连接数，这样可以完全避免某个蛋疼的客户端连累后端服务。</p><p>长连接和短连接的产生在于client和server采取的关闭策略，具体的应用场景采用具体的策略，没有十全十美的选择，只有合适的选择。</p><hr><p>本文转自<a href="http://www.cnblogs.com/beifei/archive/2011/06/26/2090611.html" target="_blank" rel="noopener">http://www.cnblogs.com/beifei/archive/2011/06/26/2090611.html</a></p><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;TCP连接&quot;&gt;&lt;a href=&quot;#TCP连接&quot; class=&quot;headerlink&quot; title=&quot;TCP连接&quot;&gt;&lt;/a&gt;TCP连接&lt;/h2&gt;&lt;p&gt;当网络通信时采用TCP协议时，在真正的读写操作之前，server与client之间必须建立一个连接，当读写操作完成后，双方不再需要这个连接时它们可以释放这个连接，连接的建立是需要三次握手的，而释放则需要4次握手，所以说每个连接的建立都是需要资源消耗和时间消耗的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="TCP" scheme="http://wangran.me/categories/TCP/"/>
+    
+    
+      <category term="TCP Connection TCP连接" scheme="http://wangran.me/tags/TCP-Connection-TCP%E8%BF%9E%E6%8E%A5/"/>
     
   </entry>
   

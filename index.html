@@ -143,6 +143,92 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
+            <a href="/2018/10/01/spring-cloud-notes-01/">
+                
+                    Spring Cloud Finchley 在业务系统中的实践总结
+                
+            </a>
+        </h2>
+        <time>
+            2018-10-01
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Spring-Cloud/">Spring Cloud</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h1 id="Spring-Cloud-Finchley-在业务系统中的实践总结"><a href="#Spring-Cloud-Finchley-在业务系统中的实践总结" class="headerlink" title="Spring Cloud Finchley 在业务系统中的实践总结"></a>Spring Cloud Finchley 在业务系统中的实践总结</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　谈及Spring Cloud，就不可避免的要先讲讲近几年一直很火热的微服务概念。随着公司业务的发展，每一个技术项目都会经历从小到大、从简至繁，再到化繁为简的过程，那么如何合理的化繁为简，是一个亘古不变的值得持续讨论的话题。<br>　　如果将微服务理解为是可以独立部署、水平扩展、独立访问的服务单元，Spring Cloud就是这些微服务的大管家。微服务为什么需要大管家？<br>　　<br>　　<br>    <img src="media/15390670232567/15390761106099.jpg" alt=""></p>
+<p>　　<br>　　上图虽然夸张，但确是我司业务在微服务进程中所遇到的其中一个问题。宜人贷的业务系统从2012年上线以来，历经无数次的迭代与服务拆分以后，现如今已裂变成了数百个子项目。虽然对于某一个微服务来说，维护成本大大降低，但业务是整体的，如果没有所谓的大管家，那么维护微服务集群一定是一个灾难。</p>
+<hr>
+<h2 id="简谈我们微服务化的历史进程"><a href="#简谈我们微服务化的历史进程" class="headerlink" title="简谈我们微服务化的历史进程"></a>简谈我们微服务化的历史进程</h2><p>　　在最初的微服务化进程中，也就是从2013年开始，我们引入了当时理念较为先进的Dubbo作为服务化治理的核心框架一直沿用至今。那么，为什么我们还要使用Spring Cloud？<br>　　首先，Dubbo自阿里巴巴开源后的很长一段时间长期停止了维护（2017年7月31日阿里团队又宣布重点维护），而Spring Cloud确是一直迭代至今，在很多技术理念上Dubbo相比Spring Cloud而言已不具优势，Dubbo所具备的功能也依然成为Spring Cloud的一个子集。<br>　　其次，Spring Cloud基于Spring Boot发展而来，其提供了一整套满足微服务的、可插拔式的一站式解决方案，简单易用。<br>　　最后，在我司业务中的App与App Server端，一直是Dubbo大管家所失控的法外之地，仅几个业务线，所部署的公网域名就多达几十个，可见这里服务之间繁杂的关系的维护成本，这部分项目已然是上图中的一个缩影。目前Spring Cloud在整个社区有着非常高的活跃度，那么选择Spring Cloud来治理当然是不二之选。</p>
+<h3 id="基于Spring-Cloud我们能做哪些事？"><a href="#基于Spring-Cloud我们能做哪些事？" class="headerlink" title="基于Spring Cloud我们能做哪些事？"></a>基于Spring Cloud我们能做哪些事？</h3><p>　　引用官方说明描述一下Spring Cloud的核心特性以及支持其特性的核心组件。</p>
+<h4 id="Features"><a href="#Features" class="headerlink" title="Features　　"></a>Features　　</h4><p>　　Spring Cloud focuses on providing good out of box experience for typical use cases and extensibility mechanism to cover others.</p>
+<ul>
+<li>Distributed/versioned configuration</li>
+<li>Service registration and discovery</li>
+<li>Routing</li>
+<li>Service-to-service calls</li>
+<li>Load balancing</li>
+<li>Circuit Breakers</li>
+<li>Global locks</li>
+<li>Leadership election and cluster state</li>
+<li>Distributed messaging</li>
+</ul>
+<h4 id="Main-Projects"><a href="#Main-Projects" class="headerlink" title="Main Projects"></a>Main Projects</h4><ul>
+<li>Spring Cloud Config</li>
+<li>Spring Cloud Netflix(Eureka, Hystrix, Zuul, Archaius, etc.).</li>
+<li>Spring Cloud Bus</li>
+<li>Spring Cloud for Cloud Foundry</li>
+<li>Spring Cloud Open Service Broker</li>
+<li>Spring Cloud Cluster</li>
+<li>Spring Cloud Consul</li>
+<li>Spring Cloud Security</li>
+<li>Spring Cloud Sleuth</li>
+<li>Spring Cloud Data Flow</li>
+<li>Spring Cloud Stream</li>
+<li>Spring Cloud Task</li>
+<li>Spring Cloud Zookeeper</li>
+<li>Spring Cloud for Amazon Web Services</li>
+<li>Spring Cloud Connectors</li>
+<li>Spring Cloud Starters</li>
+<li>Spring Cloud CLI</li>
+<li>Spring Cloud Contract</li>
+<li>Spring Cloud Gateway</li>
+<li>Spring Cloud OpenFeign</li>
+<li>Spring Cloud Pipelines</li>
+<li>Spring Cloud Function</li>
+</ul>
+<p>　　可以看到，Spring Cloud提供了非常多的核心组件，这些组件已经将微服务的所有需求都涵盖了。<br>　　TODO</p>
+<h3 id="接入Spring-Cloud面对的困难与挑战"><a href="#接入Spring-Cloud面对的困难与挑战" class="headerlink" title="接入Spring Cloud面对的困难与挑战"></a>接入Spring Cloud面对的困难与挑战</h3><ul>
+<li>如何与非Spring Boot传统项目集成</li>
+<li>Zuul的增强，如何动态修改路由配置信息</li>
+<li>面对与生产有差异的测试环境以及无法验证的生产环境，如何平稳上线</li>
+<li>TODO</li>
+</ul>
+
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Spring-Cloud/"><i class="fa fa-tag fa-fw"></i>&nbsp;Spring Cloud</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
             <a href="/2016/10/20/github_pages_init/">
                 
                     基于Github搭建个人博客
@@ -317,52 +403,6 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
-            <a href="/2016/07/18/zookeeper-02/">
-                
-                    Zookeeper学习笔记二
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-18
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Zookeeper/">Zookeeper</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p>
-<ul>
-<li>Leader 选举而来，为client提供读/写服务。</li>
-<li>Follower 为client提供读服务，可参与选举。</li>
-<li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
-        
-            <div class="readmore">
-                <a href="/2016/07/18/zookeeper-02/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Zookeeper-ZAB/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper ZAB</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
             <a href="/2016/07/18/zookeeper_summary/">
                 
                     Zookeeper学习笔记二
@@ -397,6 +437,52 @@
             <div class="full-width auto-padding tags">
                 
                     <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/07/18/zookeeper-02/">
+                
+                    Zookeeper学习笔记二
+                
+            </a>
+        </h2>
+        <time>
+            2016-07-18
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Zookeeper/">Zookeeper</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p>
+<ul>
+<li>Leader 选举而来，为client提供读/写服务。</li>
+<li>Follower 为client提供读服务，可参与选举。</li>
+<li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
+        
+            <div class="readmore">
+                <a href="/2016/07/18/zookeeper-02/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Zookeeper-ZAB/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper ZAB</a>
                 
             </div>
         
@@ -481,48 +567,6 @@
             <div class="full-width auto-padding tags">
                 
                     <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/07/03/tcp-connection/">
-                
-                    TCP长连接与短连接的区别
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-03
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/TCP/">TCP</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h2><p>当网络通信时采用TCP协议时，在真正的读写操作之前，server与client之间必须建立一个连接，当读写操作完成后，双方不再需要这个连接时它们可以释放这个连接，连接的建立是需要三次握手的，而释放则需要4次握手，所以说每个连接的建立都是需要资源消耗和时间消耗的。</p>
-        
-            <div class="readmore">
-                <a href="/2016/07/03/tcp-connection/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/TCP-Connection-TCP连接/"><i class="fa fa-tag fa-fw"></i>&nbsp;TCP Connection TCP连接</a>
                 
             </div>
         
@@ -686,6 +730,8 @@
                 
                     <li><a class="flat-box" href="/categories/Jekyll/"><div class='name'>Jekyll</div><div class='badge'>1</div></a></li>
                 
+                    <li><a class="flat-box" href="/categories/Spring-Cloud/"><div class='name'>Spring Cloud</div><div class='badge'>1</div></a></li>
+                
                     <li><a class="flat-box" href="/categories/TCP/"><div class='name'>TCP</div><div class='badge'>2</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/Zookeeper/"><div class='name'>Zookeeper</div><div class='badge'>7</div></a></li>
@@ -701,7 +747,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Jekyll-Github-搭建静态博客-blog/" style="font-size: 14px; color: #999">Jekyll Github 搭建静态博客 blog</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TCP-Connection-TCP连接/" style="font-size: 14px; color: #999">TCP Connection TCP连接</a> <a href="/tags/Zookeeper/" style="font-size: 24px; color: #555">Zookeeper</a> <a href="/tags/Zookeeper-Paxos/" style="font-size: 14px; color: #999">Zookeeper Paxos</a> <a href="/tags/Zookeeper-ZAB/" style="font-size: 14px; color: #999">Zookeeper ZAB</a> <a href="/tags/数据库/" style="font-size: 14px; color: #999">数据库</a>
+            <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Jekyll-Github-搭建静态博客-blog/" style="font-size: 14px; color: #999">Jekyll Github 搭建静态博客 blog</a> <a href="/tags/Spring-Cloud/" style="font-size: 14px; color: #999">Spring Cloud</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TCP-Connection-TCP连接/" style="font-size: 14px; color: #999">TCP Connection TCP连接</a> <a href="/tags/Zookeeper/" style="font-size: 24px; color: #555">Zookeeper</a> <a href="/tags/Zookeeper-Paxos/" style="font-size: 14px; color: #999">Zookeeper Paxos</a> <a href="/tags/Zookeeper-ZAB/" style="font-size: 14px; color: #999">Zookeeper ZAB</a> <a href="/tags/数据库/" style="font-size: 14px; color: #999">数据库</a>
         </div>
     </section>
 

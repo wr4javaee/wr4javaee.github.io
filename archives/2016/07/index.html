@@ -276,52 +276,6 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
-            <a href="/2016/07/18/zookeeper-02/">
-                
-                    Zookeeper学习笔记二
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-18
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Zookeeper/">Zookeeper</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p>
-<ul>
-<li>Leader 选举而来，为client提供读/写服务。</li>
-<li>Follower 为client提供读服务，可参与选举。</li>
-<li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
-        
-            <div class="readmore">
-                <a href="/2016/07/18/zookeeper-02/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Zookeeper-ZAB/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper ZAB</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
             <a href="/2016/07/18/zookeeper_summary/">
                 
                     Zookeeper学习笔记二
@@ -356,6 +310,52 @@
             <div class="full-width auto-padding tags">
                 
                     <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/07/18/zookeeper-02/">
+                
+                    Zookeeper学习笔记二
+                
+            </a>
+        </h2>
+        <time>
+            2016-07-18
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Zookeeper/">Zookeeper</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p>
+<ul>
+<li>Leader 选举而来，为client提供读/写服务。</li>
+<li>Follower 为client提供读服务，可参与选举。</li>
+<li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
+        
+            <div class="readmore">
+                <a href="/2016/07/18/zookeeper-02/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Zookeeper-ZAB/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper ZAB</a>
                 
             </div>
         
@@ -452,48 +452,6 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
-            <a href="/2016/07/03/tcp-connection/">
-                
-                    TCP长连接与短连接的区别
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-03
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/TCP/">TCP</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h2><p>当网络通信时采用TCP协议时，在真正的读写操作之前，server与client之间必须建立一个连接，当读写操作完成后，双方不再需要这个连接时它们可以释放这个连接，连接的建立是需要三次握手的，而释放则需要4次握手，所以说每个连接的建立都是需要资源消耗和时间消耗的。</p>
-        
-            <div class="readmore">
-                <a href="/2016/07/03/tcp-connection/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/TCP-Connection-TCP连接/"><i class="fa fa-tag fa-fw"></i>&nbsp;TCP Connection TCP连接</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
             <a href="/2016/07/03/tcp_connection/">
                 
                     TCP长连接与短连接的区别
@@ -524,6 +482,48 @@
             <div class="full-width auto-padding tags">
                 
                     <a href="/tags/TCP/"><i class="fa fa-tag fa-fw"></i>&nbsp;TCP</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/07/03/tcp-connection/">
+                
+                    TCP长连接与短连接的区别
+                
+            </a>
+        </h2>
+        <time>
+            2016-07-03
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/TCP/">TCP</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h2 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h2><p>当网络通信时采用TCP协议时，在真正的读写操作之前，server与client之间必须建立一个连接，当读写操作完成后，双方不再需要这个连接时它们可以释放这个连接，连接的建立是需要三次握手的，而释放则需要4次握手，所以说每个连接的建立都是需要资源消耗和时间消耗的。</p>
+        
+            <div class="readmore">
+                <a href="/2016/07/03/tcp-connection/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/TCP-Connection-TCP连接/"><i class="fa fa-tag fa-fw"></i>&nbsp;TCP Connection TCP连接</a>
                 
             </div>
         
@@ -628,6 +628,8 @@
                 
                     <li><a class="flat-box" href="/categories/Jekyll/"><div class='name'>Jekyll</div><div class='badge'>1</div></a></li>
                 
+                    <li><a class="flat-box" href="/categories/Spring-Cloud/"><div class='name'>Spring Cloud</div><div class='badge'>1</div></a></li>
+                
                     <li><a class="flat-box" href="/categories/TCP/"><div class='name'>TCP</div><div class='badge'>2</div></a></li>
                 
                     <li><a class="flat-box" href="/categories/Zookeeper/"><div class='name'>Zookeeper</div><div class='badge'>7</div></a></li>
@@ -643,7 +645,7 @@
     <section class='m_widget tagcloud'>
         <div class="header"><i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;标签</div>
         <div class='content'>
-            <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Jekyll-Github-搭建静态博客-blog/" style="font-size: 14px; color: #999">Jekyll Github 搭建静态博客 blog</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TCP-Connection-TCP连接/" style="font-size: 14px; color: #999">TCP Connection TCP连接</a> <a href="/tags/Zookeeper/" style="font-size: 24px; color: #555">Zookeeper</a> <a href="/tags/Zookeeper-Paxos/" style="font-size: 14px; color: #999">Zookeeper Paxos</a> <a href="/tags/Zookeeper-ZAB/" style="font-size: 14px; color: #999">Zookeeper ZAB</a> <a href="/tags/数据库/" style="font-size: 14px; color: #999">数据库</a>
+            <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Jekyll-Github-搭建静态博客-blog/" style="font-size: 14px; color: #999">Jekyll Github 搭建静态博客 blog</a> <a href="/tags/Spring-Cloud/" style="font-size: 14px; color: #999">Spring Cloud</a> <a href="/tags/TCP/" style="font-size: 14px; color: #999">TCP</a> <a href="/tags/TCP-Connection-TCP连接/" style="font-size: 14px; color: #999">TCP Connection TCP连接</a> <a href="/tags/Zookeeper/" style="font-size: 24px; color: #555">Zookeeper</a> <a href="/tags/Zookeeper-Paxos/" style="font-size: 14px; color: #999">Zookeeper Paxos</a> <a href="/tags/Zookeeper-ZAB/" style="font-size: 14px; color: #999">Zookeeper ZAB</a> <a href="/tags/数据库/" style="font-size: 14px; color: #999">数据库</a>
         </div>
     </section>
 
