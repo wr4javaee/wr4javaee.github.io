@@ -52,7 +52,7 @@
     							</li>
     						
     							<li>
-    								<a class='nav-projects flat-box' href='http://wangran.me'>
+    								<a class='nav-projects flat-box' href='https://wangran.me'>
     									<i class='fa fa-cube fa-'></i>&nbsp;项目
     								</a>
     							</li>
@@ -114,7 +114,7 @@
                         </li>
                     
                         <li>
-                            <a class='nav-projects flat-box nav flat-box' href='http://wangran.me'><i class='fa fa-cube fa-fw'></i>&nbsp;项目</a>
+                            <a class='nav-projects flat-box nav flat-box' href='https://wangran.me'><i class='fa fa-cube fa-fw'></i>&nbsp;项目</a>
                         </li>
                     
                         <li>
@@ -157,7 +157,7 @@
     <section class="article typo">
 
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="Spring-Cloud-Finchley-在业务系统中的实践总结"><a href="#Spring-Cloud-Finchley-在业务系统中的实践总结" class="headerlink" title="Spring Cloud Finchley 在业务系统中的实践总结"></a>Spring Cloud Finchley 在业务系统中的实践总结</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　谈及Spring Cloud，就不可避免的要先讲讲近几年一直很火热的微服务概念。随着公司业务的发展，每一个技术项目都会经历从小到大、从简至繁，再到化繁为简的过程，那么如何合理的化繁为简，是一个亘古不变的值得持续讨论的话题。<br>　　如果将微服务理解为是可以独立部署、水平扩展、独立访问的服务单元，Spring Cloud就是这些微服务的大管家。微服务为什么需要大管家？<br>　　<br>　　<br>    <img src="media/15390670232567/15390761106099.jpg" alt=""></p>
+            <h1 id="Spring-Cloud-Finchley-在业务系统中的实践总结"><a href="#Spring-Cloud-Finchley-在业务系统中的实践总结" class="headerlink" title="Spring Cloud Finchley 在业务系统中的实践总结"></a>Spring Cloud Finchley 在业务系统中的实践总结</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　谈及Spring Cloud，就不可避免的要先讲讲近几年一直很火热的微服务概念。随着公司业务的发展，每一个技术项目都会经历从小到大、从简至繁，再到化繁为简的过程，那么如何合理的化繁为简，是一个亘古不变的值得持续讨论的话题。<br>　　如果将微服务理解为是可以独立部署、水平扩展、独立访问的服务单元，Spring Cloud就是这些微服务的大管家。微服务为什么需要大管家？<br>　　<br>　　<br>    <img src="/images/15390670232567/15390761106099.jpg" alt=""></p>
 <p>　　<br>　　上图虽然夸张，但确是我司业务在微服务进程中所遇到的其中一个问题。宜人贷的业务系统从2012年上线以来，历经无数次的迭代与服务拆分以后，现如今已裂变成了数百个子项目。虽然对于某一个微服务来说，维护成本大大降低，但业务是整体的，如果没有所谓的大管家，那么维护微服务集群一定是一个灾难。</p>
 <hr>
 <h2 id="简谈我们微服务化的历史进程"><a href="#简谈我们微服务化的历史进程" class="headerlink" title="简谈我们微服务化的历史进程"></a>简谈我们微服务化的历史进程</h2><p>　　在最初的微服务化进程中，也就是从2013年开始，我们引入了当时理念较为先进的Dubbo作为服务化治理的核心框架一直沿用至今。那么，为什么我们还要使用Spring Cloud？<br>　　首先，Dubbo自阿里巴巴开源后的很长一段时间长期停止了维护（2017年7月31日阿里团队又宣布重点维护），而Spring Cloud确是一直迭代至今，在很多技术理念上Dubbo相比Spring Cloud而言已不具优势，Dubbo所具备的功能也依然成为Spring Cloud的一个子集。<br>　　其次，Spring Cloud基于Spring Boot发展而来，其提供了一整套满足微服务的、可插拔式的一站式解决方案，简单易用。<br>　　最后，在我司业务中的App与App Server端，一直是Dubbo大管家所失控的法外之地，仅几个业务线，所部署的公网域名就多达几十个，可见这里服务之间繁杂的关系的维护成本，这部分项目已然是上图中的一个缩影。目前Spring Cloud在整个社区有着非常高的活跃度，那么选择Spring Cloud来治理当然是不二之选。</p>
@@ -261,15 +261,15 @@
         <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
         <ul>
             
-                <li><a href="http://wangran.me/2016/10/20/github_pages_init/">基于Github搭建个人博客</a></li>
+                <li><a href="https://wangran.me/2016/10/20/github_pages_init/">基于Github搭建个人博客</a></li>
             
-                <li><a href="http://wangran.me/2016/07/27/zookeeper_curator/">Zookeeper Curator的使用</a></li>
+                <li><a href="https://wangran.me/2016/07/27/zookeeper_curator/">Zookeeper Curator的使用</a></li>
             
-                <li><a href="http://wangran.me/2016/07/26/zookeeper_java_api/">Zookeeper Java API的使用</a></li>
+                <li><a href="https://wangran.me/2016/07/26/zookeeper_java_api/">Zookeeper Java API的使用</a></li>
             
-                <li><a href="http://wangran.me/2016/07/23/zookeeper_deploy_and_client_using/">Zookeeper的安装部署与客户端使用</a></li>
+                <li><a href="https://wangran.me/2016/07/23/zookeeper_deploy_and_client_using/">Zookeeper的安装部署与客户端使用</a></li>
             
-                <li><a href="http://wangran.me/2016/07/18/zookeeper_summary/">Zookeeper学习笔记二</a></li>
+                <li><a href="https://wangran.me/2016/07/18/zookeeper-02/">Zookeeper学习笔记二</a></li>
             
         </ul>
     </div>
@@ -314,7 +314,7 @@
     <section class='m_widget author'>
         
             <div class='header'>
-                <img class='avatar' src='http://wangran.me/images/yumao.jpg' />
+                <img class='avatar' src='https://wangran.me/images/yumao.jpg' />
             </div>
         
         <div class='content'>
@@ -434,7 +434,7 @@
     <div class='content'>
         <ul class="entry" id="links">
             
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="http://wangran.me">
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://wangran.me">
                     <div class='name'>
                         <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
                         &nbsp;&nbsp;wr4javaee
