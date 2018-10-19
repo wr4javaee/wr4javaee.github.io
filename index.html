@@ -162,7 +162,7 @@
     </section>
 
     <section class="article typo">
-        <h1 id="Spring-Cloud-Finchley-在业务系统中的实践总结-Zuul的实践与增强"><a href="#Spring-Cloud-Finchley-在业务系统中的实践总结-Zuul的实践与增强" class="headerlink" title="Spring Cloud Finchley 在业务系统中的实践总结 - Zuul的实践与增强"></a>Spring Cloud Finchley 在业务系统中的实践总结 - Zuul的实践与增强</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　本文主要针对Zuul在实际业务场景中的一些实践心得进行总结，重点围绕Zuul本身关于动态配置缺陷问题、老项目接入及老环境上线问题等方面进行讨论。关于Zuul的一些基本用法，可直接参考<a href="http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html" target="_blank" rel="noopener">Spring Cloud官方文档
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　本文主要针对Zuul在实际业务场景中的一些实践心得进行总结，重点围绕Zuul本身关于动态配置缺陷问题、老项目接入及老环境上线问题等方面进行讨论。关于Zuul的一些基本用法，可直接参考<a href="http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html" target="_blank" rel="noopener">Spring Cloud官方文档
 </a>与<a href="https://github.com/Netflix/zuul" target="_blank" rel="noopener">Zuul Github</a>。<br>　　我们使用的Zuul基于Spring官方目前最新版本Spring Cloud Finchley.SR1。</p>
 <hr>
         
@@ -361,52 +361,6 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
-            <a href="/2016/07/18/zookeeper-02/">
-                
-                    Zookeeper学习笔记二
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-18
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Zookeeper/">Zookeeper</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p>
-<ul>
-<li>Leader 选举而来，为client提供读/写服务。</li>
-<li>Follower 为client提供读服务，可参与选举。</li>
-<li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
-        
-            <div class="readmore">
-                <a href="/2016/07/18/zookeeper-02/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Zookeeper-ZAB/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper ZAB</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
             <a href="/2016/07/18/zookeeper_summary/">
                 
                     Zookeeper学习笔记二
@@ -441,6 +395,52 @@
             <div class="full-width auto-padding tags">
                 
                     <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
+                
+            </div>
+        
+    </section>
+</article>
+
+        </div>
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2016/07/18/zookeeper-02/">
+                
+                    Zookeeper学习笔记二
+                
+            </a>
+        </h2>
+        <time>
+            2016-07-18
+        </time>
+        
+    
+    <div class='cats'>
+        <a href="/categories/Zookeeper/">Zookeeper</a>
+    </div>
+
+
+    </section>
+
+    <section class="article typo">
+        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p>
+<ul>
+<li>Leader 选举而来，为client提供读/写服务。</li>
+<li>Follower 为client提供读服务，可参与选举。</li>
+<li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
+        
+            <div class="readmore">
+                <a href="/2016/07/18/zookeeper-02/" class="flat-box">READ MORE</a>
+            </div>
+        
+
+        
+            <div class="full-width auto-padding tags">
+                
+                    <a href="/tags/Zookeeper-ZAB/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper ZAB</a>
                 
             </div>
         
@@ -537,7 +537,7 @@
             <article class="post reveal ">
     <section class="meta">
         <h2 class="title">
-            <a href="/2016/07/03/tcp_connection/">
+            <a href="/2016/07/03/tcp-connection/">
                 
                     TCP长连接与短连接的区别
                 
@@ -559,14 +559,14 @@
         <h2 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h2><p>当网络通信时采用TCP协议时，在真正的读写操作之前，server与client之间必须建立一个连接，当读写操作完成后，双方不再需要这个连接时它们可以释放这个连接，连接的建立是需要三次握手的，而释放则需要4次握手，所以说每个连接的建立都是需要资源消耗和时间消耗的。</p>
         
             <div class="readmore">
-                <a href="/2016/07/03/tcp_connection/" class="flat-box">READ MORE</a>
+                <a href="/2016/07/03/tcp-connection/" class="flat-box">READ MORE</a>
             </div>
         
 
         
             <div class="full-width auto-padding tags">
                 
-                    <a href="/tags/TCP/"><i class="fa fa-tag fa-fw"></i>&nbsp;TCP</a>
+                    <a href="/tags/TCP-Connection-TCP连接/"><i class="fa fa-tag fa-fw"></i>&nbsp;TCP Connection TCP连接</a>
                 
             </div>
         
