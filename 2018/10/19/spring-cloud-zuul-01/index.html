@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>wr4javaee</title>
+  <title>Spring Cloud Finchley 在业务系统中的实践总结 - Zuul的实践与增强 | wr4javaee</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -134,23 +134,16 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
+            <article id="post-spring-cloud-zuul-01" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    <section class='meta'>
+        <h1 class="title">
             
-
-<section class="post-list">
-    
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2018/10/19/spring-cloud-zuul-01/">
-                
-                    Spring Cloud Finchley 在业务系统中的实践总结 - Zuul的实践与增强
-                
-            </a>
-        </h2>
+                Spring Cloud Finchley 在业务系统中的实践总结 - Zuul的实践与增强
+            
+        </h1>
         <time>
-            2018-10-19
+            2018-10-19&nbsp;&nbsp;
+            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
         </time>
         
     
@@ -162,7 +155,9 @@
     </section>
 
     <section class="article typo">
-        <h1 id="Spring-Cloud-Finchley-在业务系统中的实践总结-Zuul的实践与增强"><a href="#Spring-Cloud-Finchley-在业务系统中的实践总结-Zuul的实践与增强" class="headerlink" title="Spring Cloud Finchley 在业务系统中的实践总结 - Zuul的实践与增强"></a>Spring Cloud Finchley 在业务系统中的实践总结 - Zuul的实践与增强</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　本文主要针对Zuul在实际业务场景中的一些实践心得进行总结，重点围绕Zuul本身关于动态配置缺陷问题、老项目接入及老环境上线问题等方面进行讨论。关于Zuul的一些基本用法，可直接参考<a href="http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html" target="_blank" rel="noopener">Spring Cloud官方文档
+
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="Spring-Cloud-Finchley-在业务系统中的实践总结-Zuul的实践与增强"><a href="#Spring-Cloud-Finchley-在业务系统中的实践总结-Zuul的实践与增强" class="headerlink" title="Spring Cloud Finchley 在业务系统中的实践总结 - Zuul的实践与增强"></a>Spring Cloud Finchley 在业务系统中的实践总结 - Zuul的实践与增强</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　本文主要针对Zuul在实际业务场景中的一些实践心得进行总结，重点围绕Zuul本身关于动态配置缺陷问题、老项目接入及老环境上线问题等方面进行讨论。关于Zuul的一些基本用法，可直接参考<a href="http://cloud.spring.io/spring-cloud-static/Finchley.SR1/single/spring-cloud.html" target="_blank" rel="noopener">Spring Cloud官方文档
 </a>与<a href="https://github.com/Netflix/zuul" target="_blank" rel="noopener">Zuul Github</a>。<br>　　我们使用的Zuul基于Spring官方目前最新版本Spring Cloud Finchley.SR1。</p>
 <hr>
 <h2 id="Zuul是什么"><a href="#Zuul是什么" class="headerlink" title="Zuul是什么"></a>Zuul是什么</h2><p>　　Zuul可以用两个单词总结，即路由和过滤器（Router and Filter），它是Netflix开源，并被Spring所集成，成为当前Spring Cloud最核心的组件之一。它的基本功能可概括如下：</p>
@@ -359,433 +354,104 @@
 <p><a href="https://github.com/Netflix/zuul" target="_blank" rel="noopener">Zuul Github
 </a></p>
 
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Zuul/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zuul</a>
-                
-            </div>
-        
-    </section>
-</article>
-
         </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/10/20/github_pages_init/">
+
+        
+            <div class="article-tags tags">
                 
-                    基于Github搭建个人博客
-                
-            </a>
-        </h2>
-        <time>
-            2016-10-20
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Github/">Github</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h1 id="基于Github搭建个人博客"><a href="#基于Github搭建个人博客" class="headerlink" title="基于Github搭建个人博客"></a>基于Github搭建个人博客</h1><h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="什么是github-pages？"><a href="#什么是github-pages？" class="headerlink" title="什么是github pages？"></a>什么是github pages？</h3><p>GitHub Pages is a static site hosting service.</p>
-<p>GitHub Pages is designed to host your personal, organization, or project pages directly from a GitHub repository. To learn more about the different types of GitHub Pages sites, see “<a href="https://help.github.com/articles/user-organization-and-project-pages/" target="_blank" rel="noopener">User, organization, and project pages</a>.”</p>
-<p>You can create and publish GitHub Pages online using the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator" target="_blank" rel="noopener">Automatic Page Generator</a>. If you prefer to work locally, you can use <a href="http://desktop.github.com" target="_blank" rel="noopener">GitHub Desktop</a> or the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line" target="_blank" rel="noopener">command line</a>.</p>
-<p> 由用户编写的、免费的、托管在github上的静态网页</p>
-<hr>
-        
-            <div class="readmore">
-                <a href="/2016/10/20/github_pages_init/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Github/"><i class="fa fa-tag fa-fw"></i>&nbsp;Github</a>
+                    <a href="/tags/Zuul/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Zuul</a>
                 
             </div>
         
-    </section>
-</article>
 
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/07/27/zookeeper_curator/">
+        
+            <div class="prev-next">
                 
-                    Zookeeper Curator的使用
                 
-            </a>
-        </h2>
-        <time>
-            2016-07-27
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Zookeeper/">Zookeeper</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Curator是ZooKeeper的开源客户端。<br>官网：<a href="http://curator.apache.org/" target="_blank" rel="noopener">http://curator.apache.org/</a><br>API文档：<a href="http://curator.apache.org/apidocs/index.html" target="_blank" rel="noopener">http://curator.apache.org/apidocs/index.html</a><br>
-        
-            <div class="readmore">
-                <a href="/2016/07/27/zookeeper_curator/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/07/26/zookeeper_java_api/">
-                
-                    Zookeeper Java API的使用
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-26
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Zookeeper/">Zookeeper</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Zookeeper官方API文档 <a href="http://zookeeper.apache.org/doc/r3.4.6/api/index.html" target="_blank" rel="noopener">http://zookeeper.apache.org/doc/r3.4.6/api/index.html</a></p>
-        
-            <div class="readmore">
-                <a href="/2016/07/26/zookeeper_java_api/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/07/23/zookeeper_deploy_and_client_using/">
-                
-                    Zookeeper的安装部署与客户端使用
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-23
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Zookeeper/">Zookeeper</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <p>zookeeper官方网站: <a href="http://zookeeper.apache.org/" target="_blank" rel="noopener">http://zookeeper.apache.org/</a></p>
-<h2 id="Zookeeper的安装与部署"><a href="#Zookeeper的安装与部署" class="headerlink" title="Zookeeper的安装与部署"></a>Zookeeper的安装与部署</h2><p>Zookeeper通过Java编写，因此运行前需要配置好JRE</p>
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>zookeeper下载地址为<a href="http://mirrors.cnnic.cn/apache/zookeeper/" target="_blank" rel="noopener">http://mirrors.cnnic.cn/apache/zookeeper/</a><br>
-        
-            <div class="readmore">
-                <a href="/2016/07/23/zookeeper_deploy_and_client_using/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/07/18/zookeeper-02/">
-                
-                    Zookeeper学习笔记二
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-18
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Zookeeper/">Zookeeper</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p>
-<ul>
-<li>Leader 选举而来，为client提供读/写服务。</li>
-<li>Follower 为client提供读服务，可参与选举。</li>
-<li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
-        
-            <div class="readmore">
-                <a href="/2016/07/18/zookeeper-02/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Zookeeper-ZAB/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper ZAB</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/07/18/zookeeper_summary/">
-                
-                    Zookeeper学习笔记二
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-18
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Zookeeper/">Zookeeper</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h3 id="集群角色"><a href="#集群角色" class="headerlink" title="集群角色"></a>集群角色</h3><p>ZooKeeper没有沿用传统集群模式（主备模式，Master/Slave），而是采用了Leader、Follower、Observer三种角色。</p>
-<ul>
-<li>Leader 选举而来，为client提供读/写服务。</li>
-<li>Follower 为client提供读服务，可参与选举。</li>
-<li>Observer 为client提供读服务，不参与Leader选举，不参与写操作的“过半写成功”策略，通常用于提升集群读性能。
-        
-            <div class="readmore">
-                <a href="/2016/07/18/zookeeper_summary/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/07/10/zookeeper-01/">
-                
-                    Zookeeper学习笔记一之Paxos算法
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-10
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Zookeeper/">Zookeeper</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>1990年提出的一种基于消息传递且具有高度容错性的一致性算法。<br>
-        
-            <div class="readmore">
-                <a href="/2016/07/10/zookeeper-01/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Zookeeper-Paxos/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper Paxos</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/07/10/zookeeper_paxos/">
-                
-                    Zookeeper学习笔记一之Paxos算法
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-10
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/Zookeeper/">Zookeeper</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>1990年提出的一种基于消息传递且具有高度容错性的一致性算法。<br>
-        
-            <div class="readmore">
-                <a href="/2016/07/10/zookeeper_paxos/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/Zookeeper/"><i class="fa fa-tag fa-fw"></i>&nbsp;Zookeeper</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-        <div class='post-wrapper'>
-            <article class="post reveal ">
-    <section class="meta">
-        <h2 class="title">
-            <a href="/2016/07/03/tcp_connection/">
-                
-                    TCP长连接与短连接的区别
-                
-            </a>
-        </h2>
-        <time>
-            2016-07-03
-        </time>
-        
-    
-    <div class='cats'>
-        <a href="/categories/TCP/">TCP</a>
-    </div>
-
-
-    </section>
-
-    <section class="article typo">
-        <h2 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h2><p>当网络通信时采用TCP协议时，在真正的读写操作之前，server与client之间必须建立一个连接，当读写操作完成后，双方不再需要这个连接时它们可以释放这个连接，连接的建立是需要三次握手的，而释放则需要4次握手，所以说每个连接的建立都是需要资源消耗和时间消耗的。</p>
-        
-            <div class="readmore">
-                <a href="/2016/07/03/tcp_connection/" class="flat-box">READ MORE</a>
-            </div>
-        
-
-        
-            <div class="full-width auto-padding tags">
-                
-                    <a href="/tags/TCP/"><i class="fa fa-tag fa-fw"></i>&nbsp;TCP</a>
-                
-            </div>
-        
-    </section>
-</article>
-
-        </div>
-    
-</section>
-
-
-    <br>
-    <div class="prev-next">
-        <div class="prev-next">
-            
-            <p class="current">
-                1 / 2
-            </p>
-            
-                <a class="next" rel="next" href="/page/2/">
-                    <section class="post next">
-                        &nbsp;下一页&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2016/10/20/github_pages_init/" rel="prev" title="基于Github搭建个人博客">
+                                    
+                                        基于Github搭建个人博客
+                                    
+                                </a>
+                            </h4>
+                            
+                                <h6 class="tags">
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>Github
+                                    
+                                </h6>
+                            
+                        </span>
                     </section>
-                </a>
+                
+            </div>
+        
+
+    </section>
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                
+
+    <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
+        <ul>
+            
+                <li><a href="https://wangran.me/2016/10/20/github_pages_init/">基于Github搭建个人博客</a></li>
+            
+                <li><a href="https://wangran.me/2016/07/27/zookeeper_curator/">Zookeeper Curator的使用</a></li>
+            
+                <li><a href="https://wangran.me/2016/07/26/zookeeper_java_api/">Zookeeper Java API的使用</a></li>
+            
+                <li><a href="https://wangran.me/2016/07/23/zookeeper_deploy_and_client_using/">Zookeeper的安装部署与客户端使用</a></li>
+            
+                <li><a href="https://wangran.me/2016/07/18/zookeeper-02/">Zookeeper学习笔记二</a></li>
+            
+        </ul>
+    </div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+
             
 
-        </div>
-    </div>
+            
 
+                
+
+                
+                    <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;LiveRe评论</h4>
+                    <section id="comments">
+                        <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTU4Ny82MTU1">
+                            <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                        </div>
+                    </section>
+                
+
+                
+            
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'Spring Cloud Finchley 在业务系统中的实践总结 - Zuul的实践与增强',
+        tools: true
+    }
+</script>
 
 
         </div>
@@ -935,6 +601,13 @@
     
     
         
+    <section class='m_widget toc-wrapper'>
+        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
+        <div class='content'>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-Cloud-Finchley-在业务系统中的实践总结-Zuul的实践与增强"><span class="toc-text">Spring Cloud Finchley 在业务系统中的实践总结 - Zuul的实践与增强</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Zuul是什么"><span class="toc-text">Zuul是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要使用它"><span class="toc-text">为什么要使用它</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题与挑战"><span class="toc-text">问题与挑战</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#当前Spring-Cloud-Zuul最新版本不支持路由的动态配置"><span class="toc-text">当前Spring Cloud Zuul最新版本不支持路由的动态配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非Spring-Boot项目接入问题"><span class="toc-text">非Spring Boot项目接入问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#老环境上线迁移问题"><span class="toc-text">老环境上线迁移问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上线验证问题"><span class="toc-text">上线验证问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Zuul的核心架构"><span class="toc-text">Zuul的核心架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-Zuul提供的默认过滤器"><span class="toc-text">Spring Zuul提供的默认过滤器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态路由增强，实现路由的动态配置"><span class="toc-text">动态路由增强，实现路由的动态配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#源码分析"><span class="toc-text">源码分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义路由定位器与路由刷新策略"><span class="toc-text">自定义路由定位器与路由刷新策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由动态配置的优化"><span class="toc-text">路由动态配置的优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Zuul与非Spring-Boot项目集成"><span class="toc-text">Zuul与非Spring Boot项目集成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义非Spring-Boot项目spring-cloud-starter-netflix-eureka-client组件"><span class="toc-text">自定义非Spring Boot项目spring-cloud-starter-netflix-eureka-client组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#首先引入eureka-client"><span class="toc-text">首先引入eureka-client</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#定义Listener"><span class="toc-text">定义Listener</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非Spring-Boot项目客户端接入Eureka"><span class="toc-text">非Spring Boot项目客户端接入Eureka</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#引入自定义Client"><span class="toc-text">引入自定义Client</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在Classpath添加文件：eureka-client-properties"><span class="toc-text">在Classpath添加文件：eureka-client.properties</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#web-xml文件引入Eureka监听器"><span class="toc-text">web.xml文件引入Eureka监听器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分流上线-amp-验证"><span class="toc-text">分流上线 &amp; 验证</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分流方案"><span class="toc-text">分流方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#验证方案"><span class="toc-text">验证方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol>
+        </div>
+    </section>
+
 
     
 
@@ -1032,6 +705,21 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
+
+    
+    
+        <script type="text/javascript">
+           (function(d, s) {
+               var j, e = d.getElementsByTagName(s)[0];
+               if (typeof LivereTower === 'function') { return; }
+               j = d.createElement(s);
+               j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+               j.async = true;
+               e.parentNode.insertBefore(j, e);
+           })(document, 'script');
+        </script>
+    
+    
 
 
     <script>setLoadingBarProgress(100);</script>
